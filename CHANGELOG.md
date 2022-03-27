@@ -1,3 +1,10 @@
+## [5.1.3](https://github.com/parse-community/node-apn/compare/5.1.2...5.1.3) (2022-03-27)
+
+
+### Bug Fixes
+
+* security upgrade node-forge from 1.2.1 to 1.3.0 ([#101](https://github.com/parse-community/node-apn/issues/101)) ([a713a2b](https://github.com/parse-community/node-apn/commit/a713a2b68663591de1c3eb69335dbd6cafcdf3e5))
+
 ## [5.1.2](https://github.com/parse-community/node-apn/compare/5.1.1...5.1.2) (2022-03-27)
 
 
