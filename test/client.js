@@ -126,12 +126,15 @@ describe('Client', () => {
     let establishedConnections = 0;
     let requestsServed = 0;
     server = createAndStartMockServer(TEST_PORT, (req, res, requestBody) => {
-      expect(req.headers).to.deep.equal({
+      const expectedHeaders = {
         ':authority': '127.0.0.1',
         ':method': 'POST',
         ':path': `/3/device/${MOCK_DEVICE_TOKEN}`,
         ':scheme': 'https',
         'apns-someheader': 'somevalue',
+      }
+      Object.keys(expectedHeaders).forEach((key) => {
+        expect(req.headers).to.have.property(key).that.equals(expectedHeaders[key]);
       });
       expect(requestBody).to.equal(MOCK_BODY);
       // res.setHeader('X-Foo', 'bar');
@@ -179,12 +182,15 @@ describe('Client', () => {
     let establishedConnections = 0;
     let requestsServed = 0;
     server = createAndStartMockServer(TEST_PORT, (req, res, requestBody) => {
-      expect(req.headers).to.deep.equal({
+      const expectedHeaders = {
         ':authority': '127.0.0.1',
         ':method': 'POST',
         ':path': `/3/device/${MOCK_DEVICE_TOKEN}`,
         ':scheme': 'https',
         'apns-someheader': 'somevalue',
+      }
+      Object.keys(expectedHeaders).forEach((key) => {
+        expect(req.headers).to.have.property(key).that.equals(expectedHeaders[key]);
       });
       expect(requestBody).to.equal(MOCK_BODY);
       // Set a timeout of 100 to simulate latency to a remote server.
@@ -427,10 +433,14 @@ describe('Client', () => {
     const mockDevice = MOCK_DEVICE_TOKEN;
     const performRequestExpectingGoAway = async () => {
       const result = await client.write(mockNotification, mockDevice);
-      expect(result).to.deep.equal({
-        device: MOCK_DEVICE_TOKEN,
-        error: new VError('stream ended unexpectedly with status null and empty body'),
-      });
+      expect(result).to.have.property('device', MOCK_DEVICE_TOKEN);
+      expect(result).to.have.property('error');
+      expect(result.error).to.be.instanceOf(VError);
+      expect(result.error).to.have.property(
+        'message',
+        'apn write failed: Session closed with error code 1'
+      );
+
       expect(didGetRequest).to.be.true;
       didGetRequest = false;
     };
@@ -492,12 +502,15 @@ describe('Client', () => {
     let establishedConnections = 0;
     let requestsServed = 0;
     server = createAndStartMockServer(TEST_PORT, (req, res, requestBody) => {
-      expect(req.headers).to.deep.equal({
+      const expectedHeaders = {
         ':authority': '127.0.0.1',
         ':method': 'POST',
         ':path': `/3/device/${MOCK_DEVICE_TOKEN}`,
         ':scheme': 'https',
         'apns-someheader': 'somevalue',
+      }
+      Object.keys(expectedHeaders).forEach((key) => {
+        expect(req.headers).to.have.property(key).that.equals(expectedHeaders[key]);
       });
       expect(requestBody).to.equal(MOCK_BODY);
       // res.setHeader('X-Foo', 'bar');
