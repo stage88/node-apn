@@ -1,3 +1,31 @@
+## [5.2.3](https://github.com/parse-community/node-apn/compare/5.2.2...5.2.3) (2023-07-21)
+
+
+### Bug Fixes
+
+* Incorrect field name `event` instead of `events` in Live Activity push notification payload ([#133](https://github.com/parse-community/node-apn/issues/133)) ([a25c835](https://github.com/parse-community/node-apn/commit/a25c835d220a6d37101eeaedaec78e1fb0028696))
+
+## [5.2.2](https://github.com/parse-community/node-apn/compare/5.2.1...5.2.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* Shutdown callback is not passed from provider to client ([#118](https://github.com/parse-community/node-apn/issues/118)) ([9fa197f](https://github.com/parse-community/node-apn/commit/9fa197fd92da5a56f5bdaf7d8df8dab6e85af0d1))
+
+## [5.2.1](https://github.com/parse-community/node-apn/compare/5.2.0...5.2.1) (2023-07-16)
+
+
+### Bug Fixes
+
+* Security upgrade jsonwebtoken from 8.5.1 to 9.0.0 ([#128](https://github.com/parse-community/node-apn/issues/128)) ([5bc179d](https://github.com/parse-community/node-apn/commit/5bc179dfe621fe3e225bcdffb98bc913c5745a0b))
+
+# [5.2.0](https://github.com/parse-community/node-apn/compare/5.1.3...5.2.0) (2023-07-16)
+
+
+### Features
+
+* Add support for Live Activity with ActivityKit push notifications ([#130](https://github.com/parse-community/node-apn/issues/130)) ([80717cd](https://github.com/parse-community/node-apn/commit/80717cd6c3a3341c90d3a6ea73fe64c663de8c8a))
+
 ## [5.1.3](https://github.com/parse-community/node-apn/compare/5.1.2...5.1.3) (2022-03-27)
 
 
