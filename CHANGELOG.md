@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/parse-community/node-apn/compare/5.2.3...6.0.0) (2023-10-19)
+
+
+### Features
+
+* Add support for Node 18, 20 drop support for Node 12 ([#137](https://github.com/parse-community/node-apn/issues/137)) ([f203bc1](https://github.com/parse-community/node-apn/commit/f203bc1c6d1e72a5b0689368220ec109d347003a))
+
+
+### BREAKING CHANGES
+
+* This release removes support for Node 12; the minimum required version is Node 14. ([f203bc1](f203bc1))
+
 ## [5.2.3](https://github.com/parse-community/node-apn/compare/5.2.2...5.2.3) (2023-07-21)
 
 
