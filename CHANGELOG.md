@@ -1,3 +1,10 @@
+## [6.0.1](https://github.com/parse-community/node-apn/compare/6.0.0...6.0.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* Minimum required Node version in `engines.node` has not been upgraded to Node 14 ([#138](https://github.com/parse-community/node-apn/issues/138)) ([4eb3686](https://github.com/parse-community/node-apn/commit/4eb3686e30c225d8d83c55cf7a5f11bc807a9ef4))
+
 # [6.0.0](https://github.com/parse-community/node-apn/compare/5.2.3...6.0.0) (2023-10-19)
 
 
