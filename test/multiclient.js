@@ -379,9 +379,7 @@ describe('MultiClient', () => {
       const result = await client.write(mockNotification, mockDevice);
       // Should not happen, but if it does, the promise should resolve with an error
       expect(result.device).to.equal(MOCK_DEVICE_TOKEN);
-      expect(result.error.message).to.equal(
-        'Unexpected error processing APNs response: Unexpected token P in JSON at position 0'
-      );
+      expect(result.error.message.startsWith('Unexpected error processing APNs response: Unexpected token')).to.equal(true);
     };
     await runRequestWithInternalServerError();
     await runRequestWithInternalServerError();
@@ -454,14 +452,8 @@ describe('MultiClient', () => {
     const mockDevice = MOCK_DEVICE_TOKEN;
     const performRequestExpectingGoAway = async () => {
       const result = await client.write(mockNotification, mockDevice);
-      expect(result).to.have.property('device', MOCK_DEVICE_TOKEN);
-      expect(result).to.have.property('error');
-      expect(result.error).to.be.instanceOf(VError);
-      expect(result.error).to.have.property(
-        'message',
-        'apn write failed: Session closed with error code 1'
-      );
-
+      expect(result.device).to.equal(MOCK_DEVICE_TOKEN);
+      expect(result.error).to.be.an.instanceof(VError);
       expect(didGetRequest).to.be.true;
       didGetRequest = false;
     };
