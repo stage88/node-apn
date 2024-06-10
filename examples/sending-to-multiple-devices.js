@@ -9,7 +9,7 @@ Possible use cases:
  - Sport results
 */
 
-const apn = require('@parse/node-apn');
+const apn = require('node-apn');
 
 const tokens = ['<insert token here>', '<insert token here>'];
 

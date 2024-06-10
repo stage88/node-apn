@@ -1,9 +1,15 @@
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
-const sinonChai = require('sinon-chai');
+const setupGlobals = async () => {
+  const chai = await import('chai');
+  const chaiAsPromised = await import('chai-as-promised');
+  const sinonChai = await import('sinon-chai');
 
-chai.config.includeStack = true;
-chai.use(chaiAsPromised);
-chai.use(sinonChai);
+  chai.default.config.includeStack = true;
+  chai.default.use(chaiAsPromised.default);
+  chai.default.use(sinonChai.default);
 
-global.expect = chai.expect;
+  global.expect = chai.default.expect;
+};
+
+exports.mochaGlobalSetup = async function () {
+  await setupGlobals();
+};

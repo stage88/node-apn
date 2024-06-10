@@ -1,14 +1,5 @@
 # Node APN <!-- omit in toc -->
 
-[![Build Status](https://github.com/parse-community/node-apn/workflows/ci/badge.svg?branch=master)](https://github.com/parse-community/parse-server-push-adapter/actions?query=workflow%3Aci+branch%3Amaster)
-[![Snyk Badge](https://snyk.io/test/github/parse-community/node-apn/badge.svg)](https://snyk.io/test/github/parse-community/parse-server-push-adapter)
-[![Coverage](https://img.shields.io/codecov/c/github/parse-community/node-apn/master.svg)](https://codecov.io/github/parse-community/parse-server-push-adapter?branch=master)
-[![auto-release](https://img.shields.io/badge/%F0%9F%9A%80-auto--release-9e34eb.svg)](https://github.com/parse-community/node-apn/releases)
-
-[![npm latest version](https://img.shields.io/npm/v/@parse/node-apn.svg)](https://www.npmjs.com/package/@parse/node-apn)
-
----
-
 A Node.js module for interfacing with the Apple Push Notification service.
 
 ---
@@ -31,7 +22,7 @@ A Node.js module for interfacing with the Apple Push Notification service.
 # Installation
 
 ```bash
-$ npm install @parse/node-apn --save
+$ npm install node-apn --save
 ```
 
 # Quick Start
@@ -43,7 +34,7 @@ If you have previously used v1.x and wish to learn more about what's changed in 
 ## Load in the module
 
 ```javascript
-var apn = require('@parse/node-apn');
+var apn = require('node-apn');
 ```
 
 ## Connecting
