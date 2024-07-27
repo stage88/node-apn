@@ -24,14 +24,14 @@
     "verror": "1.10.1"
   },
   "devDependencies": {
-    "@types/node": "20.14.2",
+    "@types/node": "20.14.12",
     "chai": "4.4.1",
     "chai-as-promised": "8.0.0",
-    "eslint": "9.4.0",
-    "mocha": "10.4.0",
-    "prettier": "3.3.1",
+    "eslint": "9.8.0",
+    "mocha": "10.7.0",
+    "prettier": "3.3.3",
     "sinon": "18.0.0",
-    "sinon-chai": "3.7.0"
+    "sinon-chai": "4.0.0"
   },
   "publishConfig": {
     "access": "public"
