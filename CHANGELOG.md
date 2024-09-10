@@ -1,3 +1,10 @@
+## [6.0.2](https://github.com/parse-community/node-apn/compare/6.0.1...6.0.2) (2024-09-10)
+
+
+### Bug Fixes
+
+* Incorrect field name `events` instead of `event` in Live Activity push notification payload ([#148](https://github.com/parse-community/node-apn/issues/148)) ([5876a59](https://github.com/parse-community/node-apn/commit/5876a59fcd04c53ccd85ae8ea06a51e2cf119993))
+
 ## [6.0.1](https://github.com/parse-community/node-apn/compare/6.0.0...6.0.1) (2023-10-20)
 
 
