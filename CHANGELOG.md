@@ -1,3 +1,10 @@
+## [6.2.1](https://github.com/parse-community/node-apn/compare/6.2.0...6.2.1) (2024-11-14)
+
+
+### Bug Fixes
+
+* Security upgrade jsonwebtoken from 9.0.0 to 9.0.2 ([#159](https://github.com/parse-community/node-apn/issues/159)) ([868a427](https://github.com/parse-community/node-apn/commit/868a427bfcf8e3fadf54e9b98c359edef2f57be6))
+
 # [6.2.0](https://github.com/parse-community/node-apn/compare/6.1.0...6.2.0) (2024-09-25)
 
 
