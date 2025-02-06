@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/parse-community/node-apn/compare/6.3.0...6.4.0) (2025-02-06)
+
+
+### Features
+
+* Add the ability to manage channels and send broadcasts ([#164](https://github.com/parse-community/node-apn/issues/164)) ([ab234c9](https://github.com/parse-community/node-apn/commit/ab234c92a53f71b5738e7ae6ca661ac6f75d556d))
+
 # [6.3.0](https://github.com/parse-community/node-apn/compare/6.2.1...6.3.0) (2024-12-28)
 
 
