@@ -1,3 +1,10 @@
+## [6.4.1](https://github.com/parse-community/node-apn/compare/6.4.0...6.4.1) (2025-02-08)
+
+
+### Bug Fixes
+
+* Incorrectly attempting to send body in `GET`, `DELETE` requests ([#169](https://github.com/parse-community/node-apn/issues/169)) ([7ca2681](https://github.com/parse-community/node-apn/commit/7ca268162817dc3604eda46f9ff2433605075c9e))
+
 # [6.4.0](https://github.com/parse-community/node-apn/compare/6.3.0...6.4.0) (2025-02-06)
 
 
