@@ -1,3 +1,10 @@
+## [6.4.2](https://github.com/parse-community/node-apn/compare/6.4.1...6.4.2) (2025-02-08)
+
+
+### Bug Fixes
+
+* Security upgrade http-cache-semantics from 4.1.0 to 4.1.1 ([#125](https://github.com/parse-community/node-apn/issues/125)) ([d16213a](https://github.com/parse-community/node-apn/commit/d16213a33dbb0191021593cb34b2f3c84a7640c6))
+
 ## [6.4.1](https://github.com/parse-community/node-apn/compare/6.4.0...6.4.1) (2025-02-08)
 
 
