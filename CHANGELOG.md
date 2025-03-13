@@ -1,3 +1,10 @@
+# [6.5.0](https://github.com/parse-community/node-apn/compare/6.4.3...6.5.0) (2025-03-13)
+
+
+### Features
+
+* Add `input-push-channel` and `input-push-token` to APS ([#177](https://github.com/parse-community/node-apn/issues/177)) ([a0f5230](https://github.com/parse-community/node-apn/commit/a0f5230983199747f38b621c84b196163a088474))
+
 ## [6.4.3](https://github.com/parse-community/node-apn/compare/6.4.2...6.4.3) (2025-02-11)
 
 
