@@ -1,0 +1,5 @@
+- master branch used to merge changes from upstream
+- master is merged into si/update-deps, deps are updated here
+- si/update-deps is merged release
+- client.js are modified to fix issues
+- multiclient.js are modified to fix issues
