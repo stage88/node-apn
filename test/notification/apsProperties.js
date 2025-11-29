@@ -1099,6 +1099,159 @@ describe('Notification', function () {
       });
     });
 
+    describe('input-push-channel', function () {
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.property('aps.input-push-channel');
+      });
+
+      it('can be set to a string', function () {
+        note.inputPushChannel = 'the-input-push-channel';
+
+        expect(compiledOutput()).to.have.nested.property(
+          'aps.input-push-channel',
+          'the-input-push-channel'
+        );
+      });
+
+      it('can be set to undefined', function () {
+        note.inputPushChannel = 'input-push-channel';
+        note.inputPushChannel = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.property('aps.input-push-channel');
+      });
+
+      describe('setInputPushChannel', function () {
+        it('is chainable', function () {
+          expect(note.setInputPushChannel('the-input-push-channel')).to.equal(note);
+          expect(compiledOutput()).to.have.nested.property(
+            'aps.input-push-channel',
+            'the-input-push-channel'
+          );
+        });
+      });
+    });
+
+    describe('input-push-token', function () {
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.property('aps.input-push-token');
+      });
+
+      it('can be set to a number', function () {
+        note.inputPushToken = 1;
+
+        expect(compiledOutput()).to.have.nested.property('aps.input-push-token', 1);
+      });
+
+      it('can be set to undefined', function () {
+        note.inputPushToken = 1;
+        note.inputPushToken = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.property('aps.input-push-token');
+      });
+
+      describe('setInputPushToken', function () {
+        it('is chainable', function () {
+          expect(note.setInputPushToken(1)).to.equal(note);
+          expect(compiledOutput()).to.have.nested.property('aps.input-push-token', 1);
+        });
+      });
+    });
+
+    describe('filter-criteria', function () {
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.property('aps.filter-criteria');
+      });
+
+      it('can be set to a string', function () {
+        note.filterCriteria = 'the-filter-criteria';
+
+        expect(compiledOutput()).to.have.nested.property(
+          'aps.filter-criteria',
+          'the-filter-criteria'
+        );
+      });
+
+      it('can be set to undefined', function () {
+        note.filterCriteria = 'filter-criteria';
+        note.filterCriteria = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.property('aps.filter-criteria');
+      });
+
+      describe('setFilterCriteria', function () {
+        it('is chainable', function () {
+          expect(note.setFilterCriteria('the-filter-criteria')).to.equal(note);
+          expect(compiledOutput()).to.have.nested.property(
+            'aps.filter-criteria',
+            'the-filter-criteria'
+          );
+        });
+      });
+    });
+
+    describe('attributes-type', function () {
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.property('aps.attributes-type');
+      });
+
+      it('can be set to a string', function () {
+        note.attributesType = 'the-attributes-type';
+
+        expect(compiledOutput()).to.have.nested.property(
+          'aps.attributes-type',
+          'the-attributes-type'
+        );
+      });
+
+      it('can be set to undefined', function () {
+        note.attributesType = 'attributes-type';
+        note.attributesType = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.property('aps.attributes-type');
+      });
+
+      describe('setAttributesType', function () {
+        it('is chainable', function () {
+          expect(note.setAttributesType('the-attributes-type')).to.equal(note);
+          expect(compiledOutput()).to.have.nested.property(
+            'aps.attributes-type',
+            'the-attributes-type'
+          );
+        });
+      });
+    });
+
+    describe('attributes', function () {
+      const payload = { foo: 'bar' };
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.property('aps.attributes');
+      });
+
+      it('can be set to a object', function () {
+        note.attributes = payload;
+
+        expect(compiledOutput())
+          .to.have.nested.property('aps.attributes')
+          .that.deep.equals(payload);
+      });
+
+      it('can be set to undefined', function () {
+        note.attributes = payload;
+        note.attributes = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.property('aps.attributes');
+      });
+
+      describe('setAttributes', function () {
+        it('is chainable', function () {
+          expect(note.setAttributes(payload)).to.equal(note);
+          expect(compiledOutput())
+            .to.have.nested.property('aps.attributes')
+            .that.deep.equals(payload);
+        });
+      });
+    });
+
     context('when no aps properties are set', function () {
       it('is not present', function () {
         expect(compiledOutput().aps).to.be.undefined;

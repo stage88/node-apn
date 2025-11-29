@@ -1,6 +1,6 @@
 How to update and release new versions:
 1. Branch to new version, for example `rel/v10.7.0`
-2. Update version numbers in `package.json`
+2. Update version numbers in `package.json` and `package-lock.json`
 3. run `npm run update-deps` and run tests
 4. Commit and push the branch
 5. If not already, create PR against master from upstream
