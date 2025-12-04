@@ -1,3 +1,10 @@
+## [7.0.1](https://github.com/parse-community/node-apn/compare/7.0.0...7.0.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* Security upgrade jws from 3.2.2 to 3.2.3 ([#191](https://github.com/parse-community/node-apn/issues/191)) ([45d4b05](https://github.com/parse-community/node-apn/commit/45d4b05d78d1f4a3997944ede05a76641782c66c))
+
 # [7.0.0](https://github.com/parse-community/node-apn/compare/6.5.0...7.0.0) (2025-12-01)
 
 
