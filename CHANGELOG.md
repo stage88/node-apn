@@ -1,3 +1,26 @@
+## [7.0.1](https://github.com/parse-community/node-apn/compare/7.0.0...7.0.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* Security upgrade jws from 3.2.2 to 3.2.3 ([#191](https://github.com/parse-community/node-apn/issues/191)) ([45d4b05](https://github.com/parse-community/node-apn/commit/45d4b05d78d1f4a3997944ede05a76641782c66c))
+
+# [7.0.0](https://github.com/parse-community/node-apn/compare/6.5.0...7.0.0) (2025-12-01)
+
+
+### Bug Fixes
+
+* Security upgrade node-forge from 1.3.1 to 1.3.2 ([#185](https://github.com/parse-community/node-apn/issues/185)) ([2025512](https://github.com/parse-community/node-apn/commit/20255123d68eab58714dc7dca8da29cdf277bc0d))
+
+### Features
+
+* Remove support for Node 14 and 16; add support for Node 22 and 24 ([#186](https://github.com/parse-community/node-apn/issues/186)) ([9deedb3](https://github.com/parse-community/node-apn/commit/9deedb344296171f4244d65669928548fc3933e3))
+
+
+### BREAKING CHANGES
+
+* Removes support for Node 14 and 16; adds support for Node 22 and 24. ([9deedb3](9deedb3))
+
 # [6.5.0](https://github.com/parse-community/node-apn/compare/6.4.3...6.5.0) (2025-03-13)
 
 
