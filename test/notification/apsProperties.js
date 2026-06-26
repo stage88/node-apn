@@ -761,6 +761,38 @@ describe('Notification', function () {
       });
     });
 
+    describe('content-changed', function () {
+      it('defaults to undefined', function () {
+        expect(compiledOutput()).to.not.have.nested.deep.property('aps.content-changed');
+      });
+
+      it('can be set to a boolean value', function () {
+        note.contentChanged = true;
+
+        expect(compiledOutput()).to.have.nested.deep.property('aps.content-changed', true);
+      });
+
+      it('can be set to `1`', function () {
+        note.contentChanged = 1;
+
+        expect(compiledOutput()).to.have.nested.deep.property('aps.content-changed', true);
+      });
+
+      it('can be set to undefined', function () {
+        note.contentChanged = true;
+        note.contentChanged = undefined;
+
+        expect(compiledOutput()).to.not.have.nested.deep.property('aps.content-changed');
+      });
+
+      describe('setContentChanged', function () {
+        it('is chainable', function () {
+          expect(note.setContentChanged(true)).to.equal(note);
+          expect(compiledOutput()).to.have.nested.deep.property('aps.content-changed', true);
+        });
+      });
+    });
+
     describe('mdm', function () {
       it('defaults to undefined', function () {
         expect(compiledOutput()).to.not.have.nested.deep.property('mdm');

@@ -11,8 +11,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: Node.js 18
-            NODE_VERSION: 18
           - name: Node.js 20
             NODE_VERSION: 20
           - name: Node.js 22
