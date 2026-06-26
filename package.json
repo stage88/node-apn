@@ -1,7 +1,7 @@
 {
   "name": "node-apn",
   "description": "An interface to the Apple Push Notification service for Node.js",
-  "version": "10.9.0",
+  "version": "10.10.0",
   "author": "Sam Ilic, Parse Platform, Andrew Naylor <argon@mkbot.net>",
   "keywords": [
     "apple",
@@ -24,13 +24,13 @@
     "verror": "1.10.1"
   },
   "devDependencies": {
-    "@types/node": "25.6.0",
+    "@types/node": "26.0.1",
     "chai": "4.4.1",
     "chai-as-promised": "8.0.2",
-    "eslint": "10.2.0",
-    "mocha": "11.7.5",
-    "prettier": "3.8.2",
-    "sinon": "21.1.0",
+    "eslint": "10.5.0",
+    "mocha": "11.7.6",
+    "prettier": "3.8.4",
+    "sinon": "22.0.0",
     "sinon-chai": "4.0.1"
   },
   "publishConfig": {
