@@ -62,10 +62,7 @@ describe('config', function () {
 
     it('should give precedence to production flag over NODE_ENV=production', function () {
       process.env.NODE_ENV = 'production';
-      expect(config({ production: false })).to.have.property(
-        'address',
-        'api.sandbox.push.apple.com'
-      );
+      expect(config({ production: false })).to.have.property('address', 'api.sandbox.push.apple.com');
     });
 
     it('should use api.push.apple.com when production:true', function () {
@@ -83,10 +80,7 @@ describe('config', function () {
 
       it('sets production to false when using sandbox address', function () {
         process.env.NODE_ENV = 'production';
-        expect(config({ address: 'api.sandbox.push.apple.com' })).to.have.property(
-          'production',
-          false
-        );
+        expect(config({ address: 'api.sandbox.push.apple.com' })).to.have.property('production', false);
       });
     });
   });
@@ -110,7 +104,7 @@ describe('config', function () {
       const testConfig = config();
       expect(testConfig).to.have.property(
         'manageChannelsAddress',
-        'api-manage-broadcast.sandbox.push.apple.com'
+        'api-manage-broadcast.sandbox.push.apple.com',
       );
       expect(testConfig).to.have.property('manageChannelsPort', 2195);
     });
@@ -118,10 +112,7 @@ describe('config', function () {
     it('should use api-manage-broadcast.push.apple.com when NODE_ENV=production', function () {
       process.env.NODE_ENV = 'production';
       const testConfig = config();
-      expect(testConfig).to.have.property(
-        'manageChannelsAddress',
-        'api-manage-broadcast.push.apple.com'
-      );
+      expect(testConfig).to.have.property('manageChannelsAddress', 'api-manage-broadcast.push.apple.com');
       expect(testConfig).to.have.property('manageChannelsPort', 2196);
     });
 
@@ -130,17 +121,14 @@ describe('config', function () {
       const testConfig = config({ production: false });
       expect(testConfig).to.have.property(
         'manageChannelsAddress',
-        'api-manage-broadcast.sandbox.push.apple.com'
+        'api-manage-broadcast.sandbox.push.apple.com',
       );
       expect(testConfig).to.have.property('manageChannelsPort', 2195);
     });
 
     it('should use api-manage-broadcast.push.apple.com when production:true', function () {
       const testConfig = config({ production: true });
-      expect(testConfig).to.have.property(
-        'manageChannelsAddress',
-        'api-manage-broadcast.push.apple.com'
-      );
+      expect(testConfig).to.have.property('manageChannelsAddress', 'api-manage-broadcast.push.apple.com');
       expect(testConfig).to.have.property('manageChannelsPort', 2196);
     });
 
@@ -198,21 +186,21 @@ describe('config', function () {
         it('includes the value of `pfx`', function () {
           expect(config({ pfx: 'apn.pfx', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'pfx',
-            'apn.pfx'
+            'apn.pfx',
           );
         });
 
         it('does not include a value for `cert`', function () {
           expect(config({ pfx: 'apn.pfx', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'cert',
-            'cert.pem'
+            'cert.pem',
           );
         });
 
         it('does not include a value for `key`', function () {
           expect(config({ pfx: 'apn.pfx', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'key',
-            'key.pem'
+            'key.pem',
           );
         });
       });
@@ -235,21 +223,21 @@ describe('config', function () {
         it('includes the value of `pfxData`', function () {
           expect(config({ pfxData: 'apnData', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'pfxData',
-            'apnData'
+            'apnData',
           );
         });
 
         it('does not include a value for `cert`', function () {
           expect(config({ pfxData: 'apnData', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'cert',
-            'cert.pem'
+            'cert.pem',
           );
         });
 
         it('does not include a value for `key`', function () {
           expect(config({ pfxData: 'apnData', cert: 'cert.pem', key: 'key.pem' })).to.have.property(
             'key',
-            'key.pem'
+            'key.pem',
           );
         });
       });
@@ -296,7 +284,7 @@ describe('config', function () {
 
         it('throws an error if keyId is not a string', function () {
           expect(() => config({ token: { key, teamId, keyId: 123 } })).to.throw(
-            /token\.keyId must be a string/
+            /token\.keyId must be a string/,
           );
         });
 
@@ -306,7 +294,7 @@ describe('config', function () {
 
         it('throws an error if teamId is not a string', function () {
           expect(() => config({ token: { key, keyId, teamId: 123 } })).to.throw(
-            /token\.teamId must be a string/
+            /token\.teamId must be a string/,
           );
         });
       });
@@ -341,7 +329,7 @@ describe('config', function () {
       config({ address: null });
 
       expect(fakes.logger).to.be.calledWith(
-        'Option [address] is null. This may cause unexpected behaviour.'
+        'Option [address] is null. This may cause unexpected behaviour.',
       );
     });
   });
@@ -351,7 +339,7 @@ describe('config', function () {
       config({ anOption: undefined });
 
       expect(fakes.logger).to.be.calledWith(
-        'Option [anOption] is undefined. This may cause unexpected behaviour.'
+        'Option [anOption] is undefined. This may cause unexpected behaviour.',
       );
     });
   });

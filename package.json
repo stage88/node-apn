@@ -1,7 +1,7 @@
 {
   "name": "node-apn",
   "description": "An interface to the Apple Push Notification service for Node.js",
-  "version": "10.10.0",
+  "version": "10.11.0",
   "author": "Sam Ilic, Parse Platform, Andrew Naylor <argon@mkbot.net>",
   "keywords": [
     "apple",
@@ -24,13 +24,15 @@
     "verror": "1.10.1"
   },
   "devDependencies": {
-    "@types/node": "26.0.1",
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.5.0",
     "chai": "4.4.1",
     "chai-as-promised": "8.0.2",
-    "eslint": "10.5.0",
-    "mocha": "11.7.6",
-    "prettier": "3.8.4",
-    "sinon": "22.0.0",
+    "eslint": "10.10.0",
+    "globals": "17.12.0",
+    "mocha": "12.0.0",
+    "prettier": "3.9.6",
+    "sinon": "22.1.0",
     "sinon-chai": "4.0.1"
   },
   "publishConfig": {
@@ -43,7 +45,7 @@
     "eslint:fix": "eslint --cache --fix ./",
     "prettier": "prettier --write {lib,test,examples,mock}/{**/*,*}.js index.js",
     "test": "mocha --require ./test/support.js 'test/**/*.js'",
-    "update-deps": "ncu -u && npm install --legacy-peer-deps" 
+    "update-deps": "ncu -u && npm install --legacy-peer-deps"
   },
   "engines": {
     "node": ">= 18"

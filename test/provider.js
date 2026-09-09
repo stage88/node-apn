@@ -93,7 +93,7 @@ describe('Provider', function () {
               device: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.send(notificationDouble(), 'abcd1234');
 
@@ -111,7 +111,7 @@ describe('Provider', function () {
               device: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.send(notificationDouble(), 'abcd1234');
 
@@ -151,7 +151,7 @@ describe('Provider', function () {
 
           response = await provider.send(
             notificationDouble(),
-            fakes.resolutions.map(res => res.device)
+            fakes.resolutions.map(res => res.device),
           );
         });
 
@@ -173,7 +173,7 @@ describe('Provider', function () {
               { device: 'aabbc788', status: '413', response: { reason: 'PayloadTooLarge' } },
               { device: 'fbcde238', error: { message: 'connection failed' } },
             ],
-            `Unexpected result: ${JSON.stringify(response.failed)}`
+            `Unexpected result: ${JSON.stringify(response.failed)}`,
           );
         });
       });
@@ -206,12 +206,7 @@ describe('Provider', function () {
           };
           const bundleId = 'abcd1234';
           expect(fakes.client.write).to.be.calledOnce;
-          expect(fakes.client.write).to.be.calledWith(
-            builtNotification,
-            bundleId,
-            'broadcasts',
-            'post'
-          );
+          expect(fakes.client.write).to.be.calledWith(builtNotification, bundleId, 'broadcasts', 'post');
         });
 
         it('does not pass the array index to writer', async () => {
@@ -237,15 +232,13 @@ describe('Provider', function () {
               bundleId: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.broadcast(notificationDouble(), 'abcd1234');
 
           expect(result).to.deep.equal({
             sent: [],
-            failed: [
-              { bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } },
-            ],
+            failed: [{ bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } }],
           });
         });
 
@@ -257,15 +250,13 @@ describe('Provider', function () {
               bundleId: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.broadcast(notificationDouble(), 'abcd1234');
 
           expect(result).to.deep.equal({
             sent: [],
-            failed: [
-              { bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } },
-            ],
+            failed: [{ bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } }],
           });
         });
       });
@@ -314,7 +305,7 @@ describe('Provider', function () {
 
           response = await provider.broadcast(
             fakes.resolutions.map(res => notificationDouble(res['apns-channel-id'])),
-            'test123'
+            'test123',
           );
         });
 
@@ -354,7 +345,7 @@ describe('Provider', function () {
                 error: { message: 'connection failed' },
               },
             ],
-            `Unexpected result: ${JSON.stringify(response.failed)}`
+            `Unexpected result: ${JSON.stringify(response.failed)}`,
           );
         });
       });
@@ -387,12 +378,7 @@ describe('Provider', function () {
           };
           const bundleId = 'abcd1234';
           expect(fakes.client.write).to.be.calledOnce;
-          expect(fakes.client.write).to.be.calledWith(
-            builtNotification,
-            bundleId,
-            'channels',
-            'post'
-          );
+          expect(fakes.client.write).to.be.calledWith(builtNotification, bundleId, 'channels', 'post');
         });
 
         it('writes the notification to the client once using read', async () => {
@@ -405,12 +391,7 @@ describe('Provider', function () {
           };
           const bundleId = 'abcd1234';
           expect(fakes.client.write).to.be.calledOnce;
-          expect(fakes.client.write).to.be.calledWith(
-            builtNotification,
-            bundleId,
-            'channels',
-            'get'
-          );
+          expect(fakes.client.write).to.be.calledWith(builtNotification, bundleId, 'channels', 'get');
         });
 
         it('writes the notification to the client once using readAll', async () => {
@@ -423,12 +404,7 @@ describe('Provider', function () {
           };
           const bundleId = 'abcd1234';
           expect(fakes.client.write).to.be.calledOnce;
-          expect(fakes.client.write).to.be.calledWith(
-            builtNotification,
-            bundleId,
-            'allChannels',
-            'get'
-          );
+          expect(fakes.client.write).to.be.calledWith(builtNotification, bundleId, 'allChannels', 'get');
         });
 
         it('writes the notification to the client once using delete', async () => {
@@ -441,12 +417,7 @@ describe('Provider', function () {
           };
           const bundleId = 'abcd1234';
           expect(fakes.client.write).to.be.calledOnce;
-          expect(fakes.client.write).to.be.calledWith(
-            builtNotification,
-            bundleId,
-            'channels',
-            'delete'
-          );
+          expect(fakes.client.write).to.be.calledWith(builtNotification, bundleId, 'channels', 'delete');
         });
 
         it('does not pass the array index to writer', async () => {
@@ -485,15 +456,13 @@ describe('Provider', function () {
               bundleId: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.manageChannels(notificationDouble(), 'abcd1234', 'create');
 
           expect(result).to.deep.equal({
             sent: [],
-            failed: [
-              { bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } },
-            ],
+            failed: [{ bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } }],
           });
         });
 
@@ -505,15 +474,13 @@ describe('Provider', function () {
               bundleId: 'abcd1234',
               status: '400',
               response: { reason: 'BadDeviceToken' },
-            })
+            }),
           );
           const result = await provider.manageChannels(notificationDouble(), 'abcd1234', 'create');
 
           expect(result).to.deep.equal({
             sent: [],
-            failed: [
-              { bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } },
-            ],
+            failed: [{ bundleId: 'abcd1234', status: '400', response: { reason: 'BadDeviceToken' } }],
           });
         });
       });
@@ -563,7 +530,7 @@ describe('Provider', function () {
           response = await provider.manageChannels(
             fakes.resolutions.map(res => notificationDouble(res['apns-channel-id'])),
             'test123',
-            'create'
+            'create',
           );
         });
 
@@ -603,7 +570,7 @@ describe('Provider', function () {
                 error: { message: 'connection failed' },
               },
             ],
-            `Unexpected result: ${JSON.stringify(response.failed)}`
+            `Unexpected result: ${JSON.stringify(response.failed)}`,
           );
         });
       });

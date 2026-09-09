@@ -32,7 +32,7 @@ Promise.all(
       console.log('failed:', result.failed.length);
       console.log(result.failed);
     });
-  })
+  }),
 ).then(() => {
   // For one-shot notification tasks you may wish to shutdown the connection
   // after everything is sent, but only call shutdown if you need your

@@ -108,20 +108,14 @@ describe('Notification', function () {
         });
 
         it('sets the aps.alert.loc-key property', function () {
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.loc-key',
-            'good_morning'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.loc-key', 'good_morning');
         });
       });
 
       describe('setLocKey', function () {
         it('is chainable', function () {
           expect(note.setLocKey('good_morning')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.loc-key',
-            'good_morning'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.loc-key', 'good_morning');
         });
       });
     });
@@ -294,20 +288,14 @@ describe('Notification', function () {
         });
 
         it('sets the aps.alert.title-loc-key property', function () {
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.title-loc-key',
-            'Warning'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.title-loc-key', 'Warning');
         });
       });
 
       describe('setAlert', function () {
         it('is chainable', function () {
           expect(note.setTitleLocKey('greeting')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.title-loc-key',
-            'greeting'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.title-loc-key', 'greeting');
         });
       });
     });
@@ -367,10 +355,7 @@ describe('Notification', function () {
     describe('subtitleLocKey', function () {
       it('sets the aps.alert.subtitle-loc-key property', function () {
         note.subtitleLocKey = 'Warning';
-        expect(compiledOutput()).to.have.nested.deep.property(
-          'aps.alert.subtitle-loc-key',
-          'Warning'
-        );
+        expect(compiledOutput()).to.have.nested.deep.property('aps.alert.subtitle-loc-key', 'Warning');
       });
 
       context('alert is already an object', function () {
@@ -399,20 +384,14 @@ describe('Notification', function () {
         });
 
         it('sets the aps.alert.subtitle-loc-key property', function () {
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.subtitle-loc-key',
-            'Warning'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.subtitle-loc-key', 'Warning');
         });
       });
 
       describe('setAlert', function () {
         it('is chainable', function () {
           expect(note.setSubtitleLocKey('greeting')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.subtitle-loc-key',
-            'greeting'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.subtitle-loc-key', 'greeting');
         });
       });
     });
@@ -514,10 +493,7 @@ describe('Notification', function () {
     describe('actionLocKey', function () {
       it('sets the aps.alert.action-loc-key property', function () {
         note.actionLocKey = 'reply_title';
-        expect(compiledOutput()).to.have.nested.deep.property(
-          'aps.alert.action-loc-key',
-          'reply_title'
-        );
+        expect(compiledOutput()).to.have.nested.deep.property('aps.alert.action-loc-key', 'reply_title');
       });
 
       context('alert is already an object', function () {
@@ -546,20 +522,14 @@ describe('Notification', function () {
         });
 
         it('sets the aps.alert.action-loc-key property', function () {
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.action-loc-key',
-            'ignore_title'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.action-loc-key', 'ignore_title');
         });
       });
 
       describe('setActionLocKey', function () {
         it('is chainable', function () {
           expect(note.setActionLocKey('ignore_title')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.deep.property(
-            'aps.alert.action-loc-key',
-            'ignore_title'
-          );
+          expect(compiledOutput()).to.have.nested.deep.property('aps.alert.action-loc-key', 'ignore_title');
         });
       });
     });
@@ -609,7 +579,7 @@ describe('Notification', function () {
           expect(note.setLaunchImage('remoteLaunch.png')).to.equal(note);
           expect(compiledOutput()).to.have.nested.deep.property(
             'aps.alert.launch-image',
-            'remoteLaunch.png'
+            'remoteLaunch.png',
           );
         });
       });
@@ -888,10 +858,7 @@ describe('Notification', function () {
       it('can be set to a string', function () {
         note.targetContentIdentifier = 'the-target-content-id';
 
-        expect(compiledOutput()).to.have.nested.property(
-          'aps.target-content-id',
-          'the-target-content-id'
-        );
+        expect(compiledOutput()).to.have.nested.property('aps.target-content-id', 'the-target-content-id');
       });
 
       it('can be set to undefined', function () {
@@ -906,7 +873,7 @@ describe('Notification', function () {
           expect(note.setTargetContentIdentifier('the-target-content-id')).to.equal(note);
           expect(compiledOutput()).to.have.nested.property(
             'aps.target-content-id',
-            'the-target-content-id'
+            'the-target-content-id',
           );
         });
       });
@@ -948,7 +915,7 @@ describe('Notification', function () {
 
         expect(compiledOutput()).to.have.nested.property(
           'aps.interruption-level',
-          'the-interruption-level'
+          'the-interruption-level',
         );
       });
 
@@ -964,7 +931,7 @@ describe('Notification', function () {
           expect(note.setInterruptionLevel('the-interruption-level')).to.equal(note);
           expect(compiledOutput()).to.have.nested.property(
             'aps.interruption-level',
-            'the-interruption-level'
+            'the-interruption-level',
           );
         });
       });
@@ -1109,9 +1076,7 @@ describe('Notification', function () {
       it('can be set to a object', function () {
         note.contentState = payload;
 
-        expect(compiledOutput())
-          .to.have.nested.property('aps.content-state')
-          .that.deep.equals(payload);
+        expect(compiledOutput()).to.have.nested.property('aps.content-state').that.deep.equals(payload);
       });
 
       it('can be set to undefined', function () {
@@ -1124,9 +1089,7 @@ describe('Notification', function () {
       describe('setContentState', function () {
         it('is chainable', function () {
           expect(note.setContentState(payload)).to.equal(note);
-          expect(compiledOutput())
-            .to.have.nested.property('aps.content-state')
-            .that.deep.equals(payload);
+          expect(compiledOutput()).to.have.nested.property('aps.content-state').that.deep.equals(payload);
         });
       });
     });
@@ -1141,7 +1104,7 @@ describe('Notification', function () {
 
         expect(compiledOutput()).to.have.nested.property(
           'aps.input-push-channel',
-          'the-input-push-channel'
+          'the-input-push-channel',
         );
       });
 
@@ -1157,7 +1120,7 @@ describe('Notification', function () {
           expect(note.setInputPushChannel('the-input-push-channel')).to.equal(note);
           expect(compiledOutput()).to.have.nested.property(
             'aps.input-push-channel',
-            'the-input-push-channel'
+            'the-input-push-channel',
           );
         });
       });
@@ -1197,10 +1160,7 @@ describe('Notification', function () {
       it('can be set to a string', function () {
         note.filterCriteria = 'the-filter-criteria';
 
-        expect(compiledOutput()).to.have.nested.property(
-          'aps.filter-criteria',
-          'the-filter-criteria'
-        );
+        expect(compiledOutput()).to.have.nested.property('aps.filter-criteria', 'the-filter-criteria');
       });
 
       it('can be set to undefined', function () {
@@ -1213,10 +1173,7 @@ describe('Notification', function () {
       describe('setFilterCriteria', function () {
         it('is chainable', function () {
           expect(note.setFilterCriteria('the-filter-criteria')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.property(
-            'aps.filter-criteria',
-            'the-filter-criteria'
-          );
+          expect(compiledOutput()).to.have.nested.property('aps.filter-criteria', 'the-filter-criteria');
         });
       });
     });
@@ -1229,10 +1186,7 @@ describe('Notification', function () {
       it('can be set to a string', function () {
         note.attributesType = 'the-attributes-type';
 
-        expect(compiledOutput()).to.have.nested.property(
-          'aps.attributes-type',
-          'the-attributes-type'
-        );
+        expect(compiledOutput()).to.have.nested.property('aps.attributes-type', 'the-attributes-type');
       });
 
       it('can be set to undefined', function () {
@@ -1245,10 +1199,7 @@ describe('Notification', function () {
       describe('setAttributesType', function () {
         it('is chainable', function () {
           expect(note.setAttributesType('the-attributes-type')).to.equal(note);
-          expect(compiledOutput()).to.have.nested.property(
-            'aps.attributes-type',
-            'the-attributes-type'
-          );
+          expect(compiledOutput()).to.have.nested.property('aps.attributes-type', 'the-attributes-type');
         });
       });
     });
@@ -1262,9 +1213,7 @@ describe('Notification', function () {
       it('can be set to a object', function () {
         note.attributes = payload;
 
-        expect(compiledOutput())
-          .to.have.nested.property('aps.attributes')
-          .that.deep.equals(payload);
+        expect(compiledOutput()).to.have.nested.property('aps.attributes').that.deep.equals(payload);
       });
 
       it('can be set to undefined', function () {
@@ -1277,9 +1226,7 @@ describe('Notification', function () {
       describe('setAttributes', function () {
         it('is chainable', function () {
           expect(note.setAttributes(payload)).to.equal(note);
-          expect(compiledOutput())
-            .to.have.nested.property('aps.attributes')
-            .that.deep.equals(payload);
+          expect(compiledOutput()).to.have.nested.property('aps.attributes').that.deep.equals(payload);
         });
       });
     });

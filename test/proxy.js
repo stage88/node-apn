@@ -13,7 +13,7 @@ describe('Proxy Server', async () => {
         {
           host: '127.0.0.1',
           port: 'NOT_A_PORT',
-        }
+        },
       );
     } catch (e) {
       receivedError = e;

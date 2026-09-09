@@ -146,7 +146,7 @@ describe('MultiClient', () => {
             port: CLIENT_TEST_PORT,
             address: '127.0.0.1',
             clientCount,
-          })
+          }),
       ).to.throw(`Expected positive client count but got ${clientCount}`);
     });
   });
@@ -164,8 +164,8 @@ describe('MultiClient', () => {
         ':path': path,
         ':scheme': 'https',
         'apns-someheader': 'somevalue',
-      }
-      Object.keys(expectedHeaders).forEach((key) => {
+      };
+      Object.keys(expectedHeaders).forEach(key => {
         expect(req.headers).to.have.property(key).that.equals(expectedHeaders[key]);
       });
       expect(requestBody).to.equal(MOCK_BODY);
@@ -222,8 +222,8 @@ describe('MultiClient', () => {
         ':path': path,
         ':scheme': 'https',
         'apns-someheader': 'somevalue',
-      }
-      Object.keys(expectedHeaders).forEach((key) => {
+      };
+      Object.keys(expectedHeaders).forEach(key => {
         expect(req.headers).to.have.property(key).that.equals(expectedHeaders[key]);
       });
       expect(requestBody).to.equal(MOCK_BODY);
@@ -412,8 +412,8 @@ describe('MultiClient', () => {
       expect(receivedError.device).to.equal(device);
       expect(
         receivedError.error.message.startsWith(
-          'Unexpected error processing APNs response: Unexpected token'
-        )
+          'Unexpected error processing APNs response: Unexpected token',
+        ),
       ).to.equal(true);
     };
     await runRequestWithInternalServerError();
@@ -1253,7 +1253,7 @@ describe('ManageChannelsMultiClient', () => {
             port: CLIENT_TEST_PORT,
             address: '127.0.0.1',
             clientCount,
-          })
+          }),
       ).to.throw(`Expected positive client count but got ${clientCount}`);
     });
   });
@@ -1513,8 +1513,8 @@ describe('ManageChannelsMultiClient', () => {
       expect(receivedError.bundleId).to.equal(bundleId);
       expect(
         receivedError.error.message.startsWith(
-          'Unexpected error processing APNs response: Unexpected token'
-        )
+          'Unexpected error processing APNs response: Unexpected token',
+        ),
       ).to.equal(true);
     };
     await runRequestWithInternalServerError();
